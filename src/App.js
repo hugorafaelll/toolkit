@@ -1,10 +1,11 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Cart from "./components/Cart";
 
 import "./App.css";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/cart" element={<Cart />} />
           <Route path="/" element={<Home />} />
+          <Route path="/not-found" exact element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
