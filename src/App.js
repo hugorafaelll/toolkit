@@ -15,7 +15,6 @@ function App() {
         <Routes>
           <Route path="/cart" element={<Cart />} />
           <Route path="/" element={<Home />} />
-          <Route path="/not-found" exact element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
