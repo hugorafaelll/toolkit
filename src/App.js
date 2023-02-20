@@ -13,8 +13,8 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/cart" exact element={<Cart />} />
+          <Route path="/" exact element={<Home />} />
         </Routes>
       </BrowserRouter>
     </div>
