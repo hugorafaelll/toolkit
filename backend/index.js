@@ -1,14 +1,19 @@
-const express = require("express");
+// npm install -g nodemon
 
-const cors = require("cors");
+const express = require("express"); // iimportando o modulo express do node
 
-const app = express(); // chama o app para usar diferentes metodos do express
+const cors = require("cors"); // outra biblioteca de request http entre paginas
 
-app.use(express.json());
+const app = express(); // chamando o express para criar as rotas
+
+app.use(express.json()); // para solicitar o texto em forato json
 app.use(cors()); // dar acesso ao nodejs api na aplicação react
 
 app.get("/", (req, res) => {
+  // criando caminho raiz
   res.send("Bem vindo ao online API ...");
 });
 
-app.listen(5000, console.log("Server running on port 5000"));
+app.listen(5000, () => {
+  console.log("Server running on port 5000");
+});
