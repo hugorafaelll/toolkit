@@ -1,0 +1,22 @@
+npm install @reduxjs/toolkit react-redux  axios
+
+
+
+// importar no index
+
+import { configureStore } from '@reduxjs/toolkit'
+import { Provider } from 'react-redux'
+
+
+const store = configureStore({
+    reducer: {}
+})
+
+
+
+
+<Provider store={store} > <App />  </Provider>
+
+
+ CreateSlice page para os reducers e actions 
+import { createSlice } from '@reduxjs/toolkit'

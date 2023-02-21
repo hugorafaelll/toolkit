@@ -3,9 +3,8 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Cart from "./components/Cart";
-
-import "./App.css";
 import NotFound from "./components/NotFound";
+import "./App.css";
 
 function App() {
   return (
