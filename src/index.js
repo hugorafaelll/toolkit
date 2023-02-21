@@ -1,6 +1,6 @@
 import React from "react";
 
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import { configureStore } from "@reduxjs/toolkit";
 
 import "./index.css";
@@ -9,10 +9,12 @@ import App from "./App";
 import { Provider } from "react-redux";
 import productsReducer, { productsFetch } from "./features/productsSlice";
 import { productsApi } from "./features/productsApi";
+import cartReducer from "./features/cartSlice";
 
 const store = configureStore({
   reducer: {
     productsReducer,
+    cart: cartReducer,
     [productsApi.reducerPath]: productsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>

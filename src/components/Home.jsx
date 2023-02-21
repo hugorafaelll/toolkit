@@ -1,8 +1,16 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../features/cartSlice";
 import { useGetAllProductsQuery } from "../features/productsApi";
 
 function Home() {
   const { data, error, isLoading } = useGetAllProductsQuery();
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (product) => {
+    console.log("adicionando item ");
+    dispatch(addToCart(product));
+  };
 
   return (
     <div className="home-container">
@@ -17,16 +25,14 @@ function Home() {
             {data?.map((product) => (
               <div className="product" key={product.id}>
                 <h3>{product.name}</h3>
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  style={{ width: "200px", height: "200px" }}
-                />
+                <img src={product.image} alt={product.name} />
                 <div className="details">
                   <span>{product.desc}</span>
                   <span className="price">${product.price}</span>
                 </div>
-                <button> Add to Cart</button>
+                <button onClick={() => handleAddToCart(product)}>
+                  Add to Cart
+                </button>
               </div>
             ))}
           </div>
