@@ -9,11 +9,10 @@ const products = [
   },
   {
     id: 2,
-    name: "iPhone 13 Pro",
-    desc: "6.4-inc display",
-    price: 699,
-    image:
-      "https://m.media-amazon.com/images/I/41K0G9FgD4L.__AC_SY445_SX342_QL70_ML2_.jpg",
+    name: "Nike",
+    desc: "Tênis Nike ZoomX Invincible Run Flyknit 3 Masculino",
+    price: 1499,
+    image: "https://imgnike-a.akamaihd.net/1920x1920/0252311E.jpg",
   },
   {
     id: 3,

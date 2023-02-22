@@ -24,3 +24,6 @@ import { createSlice } from '@reduxjs/toolkit'
 
 midleware faz a comunicação entre dois componentes, pode interceptar as action do redux 
 e colocar side efects 
+
+
+react toastify - cria notificações 

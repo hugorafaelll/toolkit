@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../features/cartSlice";
 import { useGetAllProductsQuery } from "../features/productsApi";
+import { useHistory } from "react-router";
 
 function Home() {
   const { data, error, isLoading } = useGetAllProductsQuery();
