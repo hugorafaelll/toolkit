@@ -27,3 +27,6 @@ e colocar side efects
 
 
 react toastify - cria notificações 
+
+useNavigate = abre uma nova pagina quando clicado acionado navigate("/endereco")
+useSelector = passar as props para outros componentes react redux
