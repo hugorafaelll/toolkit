@@ -2,16 +2,16 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../features/cartSlice";
 import { useGetAllProductsQuery } from "../features/productsApi";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const { data, error, isLoading } = useGetAllProductsQuery();
   const dispatch = useDispatch();
-  let history = useHistory();
+  const history = useNavigate();
 
   const handleAddToCart = (product) => {
-    console.log("adicionando item ");
     dispatch(addToCart(product));
+    history("/cart");
   };
 
   return (

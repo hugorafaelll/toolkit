@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 
 const initialState = {
-  cartItem: localStorage.getItem("cartItems")
-    ? JSON.parse(localStorage.getItem("cartItem"))
+  cartItem: localStorage.getItem("cartItems") //pega o item do localstorage
+    ? JSON.parse(localStorage.getItem("cartItems")) // jston to js code
     : [],
   cartTotalQuantity: 0,
   cartTotalAmount: 0,
@@ -31,7 +31,7 @@ const cartSlice = createSlice({
         });
       }
 
-      localStorage.setItem("cartItems", JSON.stringify(state.cartItem));
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItem)); // adiciona o item no localstorage stringfy converte para  json
     },
   },
 });
