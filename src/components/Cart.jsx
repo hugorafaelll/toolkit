@@ -9,7 +9,7 @@ function Cart() {
   return (
     <div className="cart-container">
       <h2> Shooping Cart</h2>
-      {cart.cartItems.length === 0 ? (
+      {cart.cartItems?.length === 0 ? (
         <div className="cart-empty">
           <p> Seu carrinho esta vazio </p>
 
