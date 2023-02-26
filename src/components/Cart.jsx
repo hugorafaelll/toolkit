@@ -9,7 +9,7 @@ function Cart() {
   return (
     <div className="cart-container">
       <h2> Shooping Cart</h2>
-      {cart.cartItems?.length === 0 ? (
+      {cart.cartItem?.length === 0 ? (
         <div className="cart-empty">
           <p> Seu carrinho esta vazio </p>
 
@@ -41,7 +41,7 @@ function Cart() {
             <h3 className="total">Total</h3>
           </div>
           <div className="cart-items">
-            {cart.cartItems?.map((cartItem) => (
+            {cart.cartItem?.map((cartItem) => (
               <div className="cart-item" key={cartItem.id}>
                 <div className="cart-product">
                   <img src={cartItem.image} alt={cartItem.name} />
