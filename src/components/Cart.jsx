@@ -53,9 +53,9 @@ function Cart() {
                 </div>
                 <div className="cart-product-price">R$:{cartItem.price}</div>
                 <div className="cart-product-quantity">
-                  <button>-</button>
-                  <div className="count"> {cartItem.cartQuantity}</div>
-                  <button>+</button>
+                  <button> - </button>
+                  <div className="count"> {cartItem.cartTotalQuantity}</div>
+                  <button> + </button>
                 </div>
                 <div className="cart-product-total-price">
                   R${cartItem.price * cartItem.cartQuantity}

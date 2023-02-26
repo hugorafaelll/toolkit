@@ -30,3 +30,7 @@ react toastify - cria notificações
 
 useNavigate = abre uma nova pagina quando clicado acionado navigate("/endereco")
 useSelector = passar as props para outros componentes react redux
+
+
+criar grid container e depois colocar em grid colums
+  grid-template-columns: 3fr 1fr 1fr 1fr;  altera a distancia das colunas 
