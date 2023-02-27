@@ -34,6 +34,17 @@ const cartSlice = createSlice({
       localStorage.setItem("cartItems", JSON.stringify(state.cartItem)); // adiciona o item no localstorage stringfy converte para  json
     },
   },
+  // reducer para remover item do carrinho 
+  removeFromCart(state, action){
+   const nextCartItems =  state.cartItems.filter(
+      cartItem => cartItem.id !== action.payload.id
+    
+    )
+  }
+  
+  
+  
+  
 });
 
 export const { addToCart } = cartSlice.actions;
