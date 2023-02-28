@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 
 const initialState = {
-  cartItem: localStorage.getItem("cartItems") //pega o item do localstorage
-    ? JSON.parse(localStorage.getItem("cartItems")) // jston to js code
+  cartItem: localStorage.getItem("cartItems")
+    ? JSON.parse(localStorage.getItem("cartItems"))
     : [],
   cartTotalQuantity: 0,
   cartTotalAmount: 0,
@@ -31,18 +31,44 @@ const cartSlice = createSlice({
         });
       }
 
-      localStorage.setItem("cartItems", JSON.stringify(state.cartItem)); // adiciona o item no localstorage stringfy converte para  json
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItem));
     },
-  },
-  // reducer para remover item do carrinho 
-  removeFromCart(state, action){
-    const nextCartItems = state.cartItem.filter(
-      (cartItem) => cartItem.id !== action.payload.id
-    );
-    state.cartItem = nextCartItems;
-  },
-  });
+    removeFromCart(state, action) {
+      const nextCartItems = state.cartItem.filter(
+        (cartItem) => cartItem.id !== action.payload.id
+      );
+      state.cartItem = nextCartItems; //envia para o local storage um novo array de items 
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItem));
+      
+      toast.error(`Removido ${action.payload.name} do carrinho`, {
+        position: "top-right",
+      });
+    },
+    decreaseCart(state, action) {
+      const itemIndex = state.cartItem.findIndex(  // acessa o index do item selecionado no payload
+        cartItem => cartItem.id === action.payload.id
+      )
+      if (state.cartItem[itemIndex].cartTotalQuantity > 1) {// acessa o index do item selecionado para apos selecionar o item no array 
+        state.cartItem[itemIndex].cartTotalQuantity -= 1;
+    
+        toast.info(`Removido ${action.payload.name} do carrinho`, {
+          position: "top-right",
+        });
+      } else if (state.cartItem[itemIndex].cartTotalQuantity === 1) {
+        const nextCartItems = state.cartItem.filter(
+          (cartItem) => cartItem.id !== action.payload.id
+        );
+        state.cartItem = nextCartItems; //envia para o local storage um novo array de items 
+      
+        toast.error(`Removido ${action.payload.name} do carrinho`, {
+          position: "top-right",
+        });
+      }
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItem));
+    }
+  }
+});
 
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, decreaseCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
