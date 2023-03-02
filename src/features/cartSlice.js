@@ -1,6 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 
+
+// ACTIONS AND REDUCERS PAGE 
+
 const initialState = {
   cartItem: localStorage.getItem("cartItems")
     ? JSON.parse(localStorage.getItem("cartItems"))
@@ -65,10 +68,35 @@ const cartSlice = createSlice({
         });
       }
       localStorage.setItem("cartItems", JSON.stringify(state.cartItem));
+    },
+    clearCart(state, action){
+      state.cartItem = []; 
+      
+       toast.success(`Não ha mais itens no carrinho`, {
+          position: "top-right",
+        });
+ localStorage.setItem("cartItems", JSON.stringify(state.cartItem));
+    },
+    getTotals(state, action){
+      let { total, quantity } = state.cartItem.reduce((cartTotal, cartItem) => {
+        const { price, cartTotalQuantity } = cartItem;
+        const itemTotal = price * cartTotalQuantity;
+        
+        cartTotal.total += itemTotal
+        cartTotal.quantity += cartTotalQuantity
+        
+        return cartTotal
+      }, {
+        total: 0,
+        quantity: 0,
+      });
+      state.cartTotalQuantity = quantity;
+      state.cartTotalAmount = total
     }
+   
   }
 });
 
-export const { addToCart, removeFromCart, decreaseCart } = cartSlice.actions;
+export const { addToCart,  decreaseCart, removeFromCart, clearCart, getTotals } = cartSlice.actions;
 
 export default cartSlice.reducer;
