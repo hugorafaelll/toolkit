@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Cart from "./components/Cart";
 import NotFound from "./components/NotFound";
 import "./App.css";
+import Container from '@mui/material/Container';
 
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
@@ -12,14 +13,19 @@ import { ToastContainer } from "react-toastify";
 function App() {
   return (
     <div className="App">
+           <Container maxWidth="xl">
       <BrowserRouter>
         <ToastContainer />
+ 
         <NavBar />
+        
         <Routes>
-          <Route path="/cart" exact element={<Cart />} />
-          <Route path="/" exact element={<Home />} />
+        <Route path="/cart" exact element={<Cart />} />
+        <Route path="/" exact element={<Home />} />
         </Routes>
-      </BrowserRouter>
+        
+        </BrowserRouter>
+        </Container>
     </div>
   );
 }

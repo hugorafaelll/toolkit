@@ -1,4 +1,6 @@
 import React from "react";
+import Carrosel from "./Carrosel/Carrosel";
+
 import { useDispatch } from "react-redux";
 import { addToCart } from "../features/cartSlice";
 import { useGetAllProductsQuery } from "../features/productsApi";
@@ -22,7 +24,8 @@ function Home() {
         <p> Ocorreu um erro {error.data}</p>
       ) : (
         <>
-          <h2> Products List</h2>
+        <Carrosel />
+          <h2>Hugo Imports</h2>
           <div className="products">
             {data?.map((product) => (
               <div className="product" key={product.id}>

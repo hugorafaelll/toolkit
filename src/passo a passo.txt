@@ -34,3 +34,6 @@ useSelector = passar as props para outros componentes react redux por arow funct
 
 criar grid container e depois colocar em grid colums
   grid-template-columns: 3fr 1fr 1fr 1fr;  altera a distancia das colunas 
+  
+  
+  mongoose para utilizar o mongodb no nodejs
