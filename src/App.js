@@ -3,9 +3,10 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Cart from "./components/Cart";
-import NotFound from "./components/NotFound";
 import "./App.css";
 import Container from '@mui/material/Container';
+
+import Whatsapp from "./components/Whatsapp-call/Whatsapp";
 
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
@@ -29,6 +30,7 @@ function App() {
         </BrowserRouter>
         </Container>
         <Footer />
+        <Whatsapp/>
     
     </div>
   );

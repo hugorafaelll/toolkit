@@ -1,0 +1,31 @@
+.btn-floating.fixed-bottom {
+    position: fixed;
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+}
+
+
+.btn-floating {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 3px 5px;
+    color: rgba(0,0,0,0.8);
+    fill: rgba(0,0,0,0.8);
+    font-size: 18px;
+    z-index: 100;
+}
+
+
+.btn-whatsapp svg {
+    width: 54px;
+    height: 58px;
+    padding: 5px 2px;
+    fill: white;
+    vertical-align: middle;
+}
+svg:not(:root) {
+    overflow-clip-margin: content-box;
+    overflow: hidden;
+}

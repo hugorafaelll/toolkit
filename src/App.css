@@ -335,15 +335,24 @@ margin-left:0.5rem;
 
 .whatsapp-link {
    position: fixed;
-   bottom: 20px;
-   right: 20px;
+   top: auto;
+   bottom: 30px;
+   right:30px;
    background-color: #4dc247;
+   color: white;
    border-radius: 50%;
-   align-items: center;
-   align-content: center;
+   box-shadow: 2px 2px 6px rgb(0 0 0 / 40%);
+   z-index: 9999;
+   border: 0;
+   
 }
 
 .whatsapp-link a img {
    width: 100px;
    align-items: center;
+}
+.whatsapp-svg{
+vertical-align: middle;
+padding: 5px 2px;
+
 }
