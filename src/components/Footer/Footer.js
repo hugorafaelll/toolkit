@@ -10,9 +10,9 @@ function Footer() {
             <div className="coluna-nav">
                 <h4 className="footer-title">Navegação</h4>
                     <ul>
-                    <li>Inicio</li>
-                    <li>Produtos</li>
-                    <li>Contatos</li>
+                    <li><a href="/" >Inicio</a></li>
+                    <li><a href="/cart">Carrinho</a></li>
+                    <li><a href="/contact" >Contatos</a></li>
                     </ul>
             </div>
             <div className="coluna-footer">

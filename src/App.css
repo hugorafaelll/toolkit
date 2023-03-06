@@ -332,3 +332,18 @@ margin-left:0.5rem;
     align-items: center;
     
 }
+
+.whatsapp-link {
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+   background-color: #4dc247;
+   border-radius: 50%;
+   align-items: center;
+   align-content: center;
+}
+
+.whatsapp-link a img {
+   width: 100px;
+   align-items: center;
+}
