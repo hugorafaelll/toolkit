@@ -1,4 +1,59 @@
-.footer{    
+.Footer{    
     background-color: black;
     color: white;
+}
+
+.container-footer{
+
+    display: flex;
+    vertical-align: baseline;
+    padding: 20px 0;
+    justify-content: center;
+    
+    margin-right: auto;
+    margin-left: auto;
+    
+    
+    font-family: sans-serif;
+
+}
+
+.coluna-footer{
+    padding-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.footer-title{
+    margin:10px 0 5px 0;
+    font-size: 14px;
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+ul{
+    list-style: none;
+    line-height: 20px;
+}
+
+li{
+    display: list-item;
+    padding-left:0.5rem ;
+}
+
+.footer-payship-img {
+    height: 26px;
+}
+
+.card-img {
+    margin: 0 5px 5px 0;
+    border: 1px solid #00000012;
+}
+
+.footer a{
+text-decoration: none;
+cursor: pointer;
+color: #fff;
+
+
 }
