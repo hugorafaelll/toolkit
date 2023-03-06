@@ -9,6 +9,7 @@ import Container from '@mui/material/Container';
 
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
         <Route path="/cart" exact element={<Cart />} />
         <Route path="/" exact element={<Home />} />
         </Routes>
+        
+        <Footer />
         
         </BrowserRouter>
         </Container>

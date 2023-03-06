@@ -36,7 +36,7 @@ function Home() {
                   <span className="price">${product.price}</span>
                 </div>
                 <button onClick={() => handleAddToCart(product)}>
-                  Add to Cart
+                  Adicionar ao Carrinho
                 </button>
               </div>
             ))}
