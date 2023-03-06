@@ -1,0 +1,46 @@
+.nav-bar{
+height: 70px;
+background-color: black;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding: 0 4rem;
+
+}
+
+
+.nav-bar h2{
+    font-size: 40px;
+}
+
+.nav-bag{
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar a{
+text-decoration: none;
+color: white;
+}
+
+.bag-quantity{
+display: flex;
+align-items: center;
+justify-content: center;
+margin-left: 5px;
+height: 25px;
+width:199px;
+background-color: white;
+border-radius: 10%;
+color: black;
+}
+
+.bag-quantity h6{
+    color: black;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-left: 0.3rem;
+    
+}
