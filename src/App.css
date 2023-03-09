@@ -42,23 +42,40 @@ color: red;
     font-weight: 400;
     text-align: center;
 }
+.frete{
+    display: flex;
+    background-color: black;
+    height: 55px;
+    width: auto;
+    color: white;
+    text-align: center;
+    align-items: center;
+    justify-content:center;
 
+    font-weight: 500;
+    font-size: 25px;
+}
+
+
+.frete h3{
+    padding-left: 0.8rem;
+}
 .products{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
 }
 
 .product{
-    width: 250px;
+    width: 200px;
     max-width: 100%;
-    height: 325px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 1rem auto;
-    padding: 1rem;
+    margin: 0.8rem auto;
+    padding: 0.3rem;
     border-radius: 15px;
     box-shadow: -5px -5px 10px rgba(255,255,255,0.5), 2px  2px 5px rgba(94,104,121,0.3)
     
@@ -80,6 +97,7 @@ color: red;
     
 .product .details {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
@@ -93,15 +111,25 @@ color: red;
 
 .product button{
     width: 100%;
-    height: 40px;
+    height: 30px;
     border-radius: 5px;
-    margin-top: 2rem;
-    font-weight: 400px;
+    margin-top: 0.3rem;
     cursor: pointer;
     border: none;
-    background: #4b70e2;
+    background: black;
     color: white;
     letter-spacing: 1.15px;
+
+}
+
+.title{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+}
+
+.price{
+margin-top: 0.3rem;
 
 }
 

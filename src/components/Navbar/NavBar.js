@@ -11,7 +11,7 @@ function NavBar() {
   return (
     <nav className="nav-bar">
       <Link to="/">
-        <h2> Online Shopping</h2>
+        <h2>LOGO</h2>
       </Link>
 
       <Link to="/cart">
