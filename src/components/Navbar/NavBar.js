@@ -3,6 +3,13 @@ import "./Navbar.css"
 import { useSelector } from "react-redux"; // para usar um state global 
 import { Link } from "react-router-dom";
 
+
+
+
+
+
+
+
 function NavBar() {
   const {cartTotalQuantity, cartTotalAmount } = useSelector(state =>state.cart)
   

@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import Carrosel from "./Carrosel/Carrosel";
 
 import { useDispatch } from "react-redux";
@@ -6,15 +7,32 @@ import { addToCart } from "../features/cartSlice";
 import { useGetAllProductsQuery } from "../features/productsApi";
 import { useNavigate } from "react-router-dom";
 
+
+import Display from "./Modal/Display";
+
+
+
+
+
+
 function Home() {
   const { data, error, isLoading } = useGetAllProductsQuery();
   const dispatch = useDispatch();
   const history = useNavigate();
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  function handleOpenModal(product) {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  }
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
     history("/cart");
   };
+
+
 
   return (
     <div className="home-container">
@@ -36,7 +54,10 @@ function Home() {
             {data?.map((product) => (
               <div className="product" key={product.id}>
                 <h4 className="title">{product.name}</h4>
-                <img src={product.image} alt={product.name} />
+                <img 
+                onClick={() => handleOpenModal(product)}
+                src={product.image} 
+                alt={product.name} />
                 <div className="details">
                   <h4 >{product.desc}</h4>
                   <h3 className="price">${product.price}</h3>
@@ -44,6 +65,11 @@ function Home() {
                 <button onClick={() => handleAddToCart(product)}>
                   Adicionar ao Carrinho
                 </button>
+
+                {isModalOpen && (
+          <Display product={product}
+           onClose={() => setIsModalOpen(false)} />
+      )}
               </div>
             ))}
           </div>
