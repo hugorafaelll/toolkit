@@ -2,34 +2,40 @@ import React from "react";
 import { useState } from "react";
 import Carrosel from "./Carrosel/Carrosel";
 
+
+//redux
 import { useDispatch } from "react-redux";
 import { addToCart } from "../features/cartSlice";
 import { useGetAllProductsQuery } from "../features/productsApi";
 import { useNavigate } from "react-router-dom";
 
-
-import Display from "./Modal/Display";
-
-
-
-
-
+// modal
+import Modal from "./Modal/BasicModal";
 
 function Home() {
   const { data, error, isLoading } = useGetAllProductsQuery();
   const dispatch = useDispatch();
-  const history = useNavigate();
+  const navigate = useNavigate();
   const [selectedProduct, setSelectedProduct] = useState(null);
+
+
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  function handleOpenModal(product) {
-    setSelectedProduct(product);
+
+  const handleOpen = () => {
     setIsModalOpen(true);
-  }
+  };
+
+
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
-    history("/cart");
+    navigate("/cart");
   };
 
 
@@ -55,7 +61,10 @@ function Home() {
               <div className="product" key={product.id}>
                 <h4 className="title">{product.name}</h4>
                 <img 
-                onClick={() => handleOpenModal(product)}
+                 onClick={() => {
+                  handleOpen(product);
+                  console.log(product.name);
+                }}
                 src={product.image} 
                 alt={product.name} />
                 <div className="details">
@@ -65,11 +74,9 @@ function Home() {
                 <button onClick={() => handleAddToCart(product)}>
                   Adicionar ao Carrinho
                 </button>
-
-                {isModalOpen && (
-          <Display product={product}
-           onClose={() => setIsModalOpen(false)} />
-      )}
+                {isModalOpen && <Modal handleOpen={handleOpen}  handleCloseModal={handleCloseModal}/>}
+              
+         
               </div>
             ))}
           </div>
